@@ -1,0 +1,40 @@
+# API Testing (Health Check)
+GET https://be-notes-riska-820401822458.asia-southeast2.run.app/ HTTP/1.1
+
+###
+# GET : All Notes
+GET https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes HTTP/1.1
+Content-Type: application/json
+
+###
+# GET : Note by ID
+# (Ganti angka 1 dengan ID catatan yang ada di database)
+GET https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes/1 HTTP/1.1
+Content-Type: application/json
+
+###
+# POST : Create Note
+POST https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes HTTP/1.1
+Content-Type: application/json
+
+{
+  "judul": "Tugas TCC Riska",
+  "isi": "note dibuaat"
+}
+
+###
+# PUT : Update Note
+# (Ganti angka 1 dengan ID catatan yang ingin diubah)
+PUT https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "judul": "Tugas TCC Riska",
+  "isi": "updatee yaaaa!"
+}
+
+###
+# DELETE : Delete Note
+# (Ganti angka 1 dengan ID catatan yang ingin dihapus)
+DELETE https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes/1 HTTP/1.1
+Content-Type: application/json
