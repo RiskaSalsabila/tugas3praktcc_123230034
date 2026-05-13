@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Route test
 app.get("/", (req, res) => {
-  res.send("Backend API berhasil jalaan ");
+  res.send("Backend API berhasil dijalankaan");
 });
 
 // Routes utama
