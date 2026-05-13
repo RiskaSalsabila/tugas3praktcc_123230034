@@ -1,36 +1,34 @@
-// Import Package dan File
 const express = require("express");
-const sequelize = require("./config/database");
-const noteRoutes = require("./routes/noteRoutes"); 
-
-// Inisialisasi Express dan Cors
-const app = express();
 const cors = require("cors");
+const noteRoutes = require("./routes/noteRoutes");
 
-app.use(cors()); // Izinkan semua origin
+// Panggil koneksi database
+const sequelize = require("./config/database"); 
 
-// Middleware untuk parsing JSON
+const app = express();
+
+// Middleware
+app.use(cors());
 app.use(express.json());
 
+// Route test
 app.get("/", (req, res) => {
-  res.send("Hello World! API Notes Ready.");
+  res.send("Backend API berhasil jalaan ");
 });
 
-require("./schema/Note"); 
-app.use("/api/v1/notes", noteRoutes); 
+// Routes utama
+app.use("/api/v1/notes", noteRoutes);
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-// 1. Jalankan server DULU biar Cloud Run sukses (nggak timeout)
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on port ${port}`);
-});
-
-// 2. Baru coba sinkronisasi database (kalau error, bakal kelihatan di log)
+// 2. Mantra Sequelize untuk auto-create tabel sebelum server nyala
 sequelize.sync()
   .then(() => {
-    console.log("Database berhasil di-sync!");
+    console.log("Database & Tabel berhasil disinkronisasi!");
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on port ${PORT}`);
+    });
   })
   .catch((err) => {
-    console.error("GAGAL KONEK DATABASE:", err.message);
+    console.error("Gagal sinkronisasi database:", err);
   });
