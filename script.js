@@ -1,4 +1,4 @@
-const API_URL = 'https://be-notes-riska-820401822458.asia-southeast2.run.app/api/v1/notes';
+const API_URL = 'https://backend-034-820401822458.us-central1.run.app/api/v1/notes';
 
 const softPastelColors = [
     '#FFEDF2', '#E9F6FF', '#F0FFF0', '#FFF9E5', '#F3E5F5', '#FFF5EB'
