@@ -1,0 +1,53 @@
+body {
+    background-color: #fff9fb;
+    font-family: 'Quicksand', sans-serif;
+    color: #4a4a4a;
+}
+
+/* Pastikan background input putih */
+.input, .textarea {
+    background-color: white !important;
+    color: #4a4a4a !important;
+    border-radius: 12px;
+}
+
+.custom-box {
+    border-radius: 25px;
+    border: 2px dashed #ffcad4;
+    background: white;
+}
+
+.btn-save {
+    background-color: #ff9fb2;
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.btn-save:hover {
+    background-color: #f2849e;
+    color: white;
+}
+
+/* KARTU CATATAN */
+.note-card {
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%; /* Biar kotak tingginya sama */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 202, 212, 0.2);
+}
+
+.card-title {
+    font-weight: 700;
+    color: #ff758f;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-date {
+    font-size: 0.7rem;
+    color: #999;
+    margin-bottom: 10px;
+    display: block;
+}

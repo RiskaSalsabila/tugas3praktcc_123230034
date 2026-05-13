@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Catatan Harian</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <header class="has-text-centered mb-6">
+                <h1 class="title is-1" style="color: #ff9fb2; font-family: 'Quicksand', sans-serif;">Notes App</h1>
+                <p class="subtitle is-6">123230034</p>
+            </header>
+
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="box custom-box animate__animated animate__fadeIn">
+                        <input type="hidden" id="noteId">
+                        <div class="field">
+                            <label class="label">Judul Catatan</label>
+                            <div class="control">
+                                <input class="input is-hovered" type="text" id="judul" placeholder="Judulnya apa manis?">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Isi Catatan</label>
+                            <div class="control">
+                                <textarea class="textarea is-hovered" id="isi" placeholder="Tulis ceritamu..."></textarea>
+                            </div>
+                        </div>
+                        <button class="button is-fullwidth btn-save" id="saveBtn" onclick="saveNote()">Simpan</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <h2 class="title is-4 has-text-centered" style="color: #ff9fb2;">🌸 Koleksi Catatan 🌸</h2>
+            
+            <div id="notesList" class="columns is-multiline">
+                </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
